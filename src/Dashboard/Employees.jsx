@@ -4,7 +4,6 @@ import { logout } from "./../features/login/loginSlice";
 import { addNew } from "./../features/employees/employeeSlice";
 import { Link, useNavigate } from "react-router-dom";
 import DataTable from "react-data-table-component";
-import Select from "./Select";
 
 const Employees = () => {
   const data = useSelector((state) => state.employees.employees);
@@ -33,43 +32,35 @@ const Employees = () => {
         return <Link to={employeeID}>{row.name}</Link>;
       },
     },
-    {
-      name: "Attendance",
-      selector: (row) => row.attendance,
-      sortable: true,
-      conditionalCellStyles: [
-        {
-          when: (row) => row.attendance === "absent",
-          style: {
-            backgroundColor: "#ef4444",
-            color: "white",
-          },
-        },
-        {
-          when: (row) => row.attendance === "present",
-          style: {
-            backgroundColor: "#86efac",
-            color: "black",
-          },
-        },
-        {
-          when: (row) => row.attendance === "vacation",
-          style: {
-            backgroundColor: "#fde047",
-            color: "black",
-          },
-        },
-      ],
-    },
+    // {
+    //   name: "Attendance",
+    //   selector: (row) => row.attendance,
+    //   sortable: true,
+    //   conditionalCellStyles: [
+    //     {
+    //       when: (row) => row.attendance === "absent",
+    //       style: {
+    //         backgroundColor: "#ef4444",
+    //         color: "white",
+    //       },
+    //     },
+    //     {
+    //       when: (row) => row.attendance === "present",
+    //       style: {
+    //         backgroundColor: "#86efac",
+    //         color: "black",
+    //       },
+    //     },
+    //     {
+    //       when: (row) => row.attendance === "vacation",
+    //       style: {
+    //         backgroundColor: "#fde047",
+    //         color: "black",
+    //       },
+    //     },
+    //   ],
+    // },
 
-    {
-      name: "Date",
-      selector: (row) => row.date,
-      sortable: true,
-      cell: (row, index, column, id) => {
-        return <Select />;
-      },
-    },
     {
       name: "test",
       cell: (row, index, column, id) => (
