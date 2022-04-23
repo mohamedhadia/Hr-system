@@ -9,6 +9,5 @@ export default function ProductPage() {
   const employee = employees.find(
     (employee) => employee.id === parseInt(employeeId.id)
   );
-  console.log(employeeId, employees, employee);
   return <EmployeeCard employee={employee} />;
 }

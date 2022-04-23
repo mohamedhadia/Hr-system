@@ -34,8 +34,23 @@ const employeeSlice = createSlice({
     addNew: (state, action) => {
       state.employees.push(action.payload);
     },
+    deleteEmp: (state, action) => {
+      const EmpIndex = state.employees.findIndex(
+        (emp) => emp.keyField === action.payload.keyField
+      );
+      state.employees.splice(EmpIndex, 1);
+    },
+    updateEmp: (state, action) => {
+      const EmpIndex = state.employees.findIndex(
+        (emp) => emp.keyField === action.payload.keyField
+      );
+      state.employees[EmpIndex] = action.payload;
+      // state.employees.splice(EmpIndex, 1);
+      // state.employees.push(action.payload);
+      console.log(action.payload);
+    },
   },
 });
 
-export const { addNew } = employeeSlice.actions;
+export const { addNew, deleteEmp, updateEmp } = employeeSlice.actions;
 export default employeeSlice.reducer;

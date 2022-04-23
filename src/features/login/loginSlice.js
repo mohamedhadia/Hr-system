@@ -10,9 +10,19 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-      state.isLoggedin = true;
-      state.user = "mohamed";
-      console.log("logged in");
+      if (
+        action.payload.email === "mail@mail.com" &&
+        action.payload.password === "12345678"
+      ) {
+        state.isLoggedin = true;
+        state.user = {
+          email: action.payload.email,
+          password: action.payload.password,
+        };
+        console.log("correct");
+      } else {
+        console.log("enter correct info");
+      }
     },
     logout: (state) => {
       state.isLoggedin = false;

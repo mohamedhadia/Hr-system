@@ -10,10 +10,9 @@ const Dashboard = (props) => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   let navigate = useNavigate();
-  console.log(user);
 
   return (
-    <div className=" h-screen w-screen bg-[#fff]">
+    <div className="h-full w-full bg-[#fff]">
       <div className="flex flex-col md:h-screen md:flex-row ">
         <div className="flex items-center justify-around gap-10 bg-[#dceef3] py-4 text-[#111111] md:fixed md:h-screen md:w-2/6 md:flex-col md:justify-start lg:w-1/5 ">
           <Link
@@ -47,7 +46,7 @@ const Dashboard = (props) => {
             </NavLink>
           </div>
         </div>
-        <div className="ml-auto mt-14 flex w-full flex-col items-center justify-center bg-[#fff] md:mt-0 md:w-4/6 lg:w-4/5">
+        <div className="z-50 ml-auto mt-14 flex h-full w-full flex-col items-center justify-center bg-[#fff] md:mt-0 md:w-4/6 lg:w-4/5">
           {props.children}
         </div>
       </div>

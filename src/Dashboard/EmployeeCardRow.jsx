@@ -1,25 +1,30 @@
 import React from "react";
+// import { useDrag } from "react-dnd";
 
-const EmployeeCardRow = ({ EmployeeData }) => {
-  console.log(EmployeeData);
+const EmployeeCardRow = ({ EmployeeData, isDragging, text }) => {
+  // const [{ opacity }, dragRef] = useDrag(
+  //   () => ({
+  //     item: { text },
+  //     collect: (monitor) => ({
+  //       opacity: monitor.isDragging() ? 0.5 : 1,
+  //     }),
+  //   }),
+  //   []
+  // );
   return (
-    <tr className="  h-14 border-separate border-t-4 border-white bg-[#dceef3] text-center">
-      <td>{EmployeeData.firstName}</td>
-      <td
-        className={`${
-          EmployeeData.category === "A"
-            ? "bg-green-300"
-            : EmployeeData.category === "B"
-            ? "bg-red-300"
-            : EmployeeData.category === "C"
-            ? "bg-yellow-400"
-            : "bg-transparent"
-        }`}
-      >
-        {EmployeeData.category}
-      </td>
-      <td>{EmployeeData.aboutYou}</td>
-    </tr>
+    <div
+      className={`${
+        EmployeeData.category === "present"
+          ? "bg-green-300"
+          : EmployeeData.category === "absent"
+          ? "bg-red-300"
+          : EmployeeData.category === "vacation"
+          ? "bg-yellow-400"
+          : "bg-transparent"
+      }  m-2 break-words py-10 px-10`}
+    >
+      <p>{EmployeeData.category}</p>
+    </div>
   );
 };
 
