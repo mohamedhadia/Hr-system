@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "./../features/login/loginSlice";
 import {
   addNew,
   deleteEmp,
