@@ -3,19 +3,34 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   events: [
     {
-      event_id: 1,
-      assignee: 1,
-      title: "present",
-      start: new Date("2022 4 1 12:00"),
-      end: new Date("2022 4 1 12:00"),
+      mohamed: [
+        {
+          event_id: 1,
+          assignee: 1,
+          title: "present",
+          start: new Date("2022 4 1 12:00"),
+          end: new Date("2022 4 1 12:00"),
+          draggable: false,
+        },
+        {
+          event_id: 1,
+          assignee: 1,
+          title: "present",
+          start: new Date("2022 4 1 12:00"),
+          end: new Date("2022 4 1 12:00"),
+        },
+      ],
     },
     {
-      event_id: 2,
-      assignee: 1,
-
-      title: "present",
-      start: new Date("2022 5 4 10:00"),
-      end: new Date("2022 5 4 11:00"),
+      ahmed: [
+        {
+          event_id: 2,
+          assignee: 2,
+          title: "present",
+          start: new Date("2022 4 1 12:00"),
+          end: new Date("2022 4 1 12:00"),
+        },
+      ],
     },
   ],
 };
@@ -25,7 +40,7 @@ const eventsSlice = createSlice({
   initialState,
   reducers: {
     addEvent: (state, action) => {
-      state.events.push(action.payload);
+      state.events[0].mohamed.push(action.payload);
     },
   },
 });
