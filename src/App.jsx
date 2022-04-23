@@ -1,6 +1,4 @@
 import "./App.css";
-import { useNavigate } from "react-router-dom";
-import Dashboard from "./Dashboard/Dashboard";
 import { Route, Routes } from "react-router-dom";
 import Test from "./Dashboard/Test";
 import Admin from "./Dashboard/Admin";
@@ -10,6 +8,12 @@ function App() {
     <Routes>
       <Route path="/" element={<Test />} />
       <Route path="/admin/*" element={<Admin />} />
+      <Route
+        path="*"
+        element={
+          <h1 className="w-full text-center text-5xl">Page not found</h1>
+        }
+      />
     </Routes>
   );
 }
