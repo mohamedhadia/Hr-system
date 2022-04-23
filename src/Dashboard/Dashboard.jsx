@@ -2,10 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { logout } from "./../features/login/loginSlice";
-import Table from "./table/Table";
 import { UsersIcon } from "@heroicons/react/solid";
-import Employees from "./Employees";
-import { Navigate } from "react-big-calendar";
 
 const Dashboard = (props) => {
   const user = useSelector((state) => state.user);
