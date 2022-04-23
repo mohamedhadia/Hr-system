@@ -44,6 +44,16 @@ const Dashboard = (props) => {
               <UsersIcon className="h-5 w-5  text-gray-600 " />
               employees2
             </NavLink>
+
+            <button
+              className="btn mt-4 "
+              onClick={() => {
+                dispatch(logout());
+                Navigate("/");
+              }}
+            >
+              logout
+            </button>
           </div>
         </div>
         <div className="z-50 ml-auto mt-14 flex h-full w-full flex-col items-center justify-center bg-[#fff] md:mt-0 md:w-4/6 lg:w-4/5">

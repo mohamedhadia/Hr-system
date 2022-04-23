@@ -17,20 +17,7 @@ const Employees = () => {
   const data = useSelector((state) => state.employees.employees);
   const dispatch = useDispatch();
   let Navigate = useNavigate();
-  const [open, setOpen] = useState(false);
-  const handleClick = () => {
-    setOpen(true);
-    // dispatch(
-    //   addNew({
-    //     id: 4,
-    //     keyField: 6,
-    //     name: "faa",
-    //     attendance: "present",
-    //     date: "40 APRL",
-    //   })
-    // );
-    console.log(open);
-  };
+
   const columns = [
     {
       name: "Name",
@@ -60,7 +47,6 @@ const Employees = () => {
       <div className=" w-full px-2 md:w-4/5">
         <Link
           className=" float-right mb-4   bg-[#bbd5dd] py-4 px-4 text-sm font-medium text-black hover:bg-[#98b2ba] focus:outline-none"
-          onClick={handleClick}
           to="addNew"
         >
           add new
@@ -75,15 +61,6 @@ const Employees = () => {
           paginationPerPage={10}
         />
       </div>
-      <button
-        className="btn mt-4"
-        onClick={() => {
-          dispatch(logout());
-          Navigate("/");
-        }}
-      >
-        logout
-      </button>
     </>
   );
 };

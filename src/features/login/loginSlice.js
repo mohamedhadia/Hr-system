@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = {
   user: null,
@@ -19,9 +20,8 @@ const authSlice = createSlice({
           email: action.payload.email,
           password: action.payload.password,
         };
-        console.log("correct");
       } else {
-        console.log("enter correct info");
+        toast.error("please use the info above to login");
       }
     },
     logout: (state) => {

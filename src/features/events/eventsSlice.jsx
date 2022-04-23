@@ -10,7 +10,6 @@ const initialState = {
           title: "present",
           start: new Date("2022 4 1 12:00"),
           end: new Date("2022 4 1 12:00"),
-          draggable: false,
         },
         {
           event_id: 1,

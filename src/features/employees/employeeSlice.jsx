@@ -47,7 +47,6 @@ const employeeSlice = createSlice({
       state.employees[EmpIndex] = action.payload;
       // state.employees.splice(EmpIndex, 1);
       // state.employees.push(action.payload);
-      console.log(action.payload);
     },
   },
 });
